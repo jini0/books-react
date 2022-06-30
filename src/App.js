@@ -1,24 +1,27 @@
-import logo from './logo.svg';
+//쌤이하신거!
 import './App.css';
+//터미널에서 yarn add styled-components 해줘야함
+import styled from 'styled-components';
+import Header from './components/Header';
+import Content from './components/Content';
+import { BookProvider } from './context/BookContext';
+
+const ContainerDiv = styled.div`
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+`;
 
 function App() {
   return (
+    <BookProvider>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <ContainerDiv>
+          <Header />
+          <Content />
+        </ContainerDiv>
     </div>
+    </BookProvider>
   );
 }
 
